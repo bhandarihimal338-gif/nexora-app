@@ -4,65 +4,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b35">
 <title>NEXORA | All-in-One Services</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fc;color:#14213d}
-header{background:#101b35;color:white;padding:24px 20px 32px;border-radius:0 0 25px 25px}
-.logo{font-size:25px;font-weight:800;color:#65a2ff}
-header h1{font-size:27px;margin:28px 0 8px}
-header p{color:#c6d4ed}
-.search{width:100%;padding:16px;border:0;border-radius:12px;font-size:15px;margin-top:15px}
-main{padding:20px}
-h2{font-size:19px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.item{background:white;padding:20px 12px;border-radius:15px;text-align:center;box-shadow:0 3px 15px #15294a10}
-.item span{font-size:30px}
-.item h3{font-size:14px;margin-bottom:0}
-.feature{background:#dceaff;padding:20px;border-radius:16px;margin-top:20px}
-.feature p{color:#465b7d}
-nav{position:sticky;bottom:0;background:white;display:flex;justify-content:space-around;padding:16px 5px;box-shadow:0 -3px 15px #00000010}
-nav a{color:#315fba;text-decoration:none;font-size:13px}
+body{margin:0;background:#f4f7fc;color:#15213b;font-family:Arial,sans-serif;padding-bottom:85px}
+header{background:linear-gradient(140deg,#101b35,#193d79);color:white;padding:25px 20px 30px;border-radius:0 0 27px 27px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:26px;font-weight:900;letter-spacing:1px}
+.logo span{color:#65a5ff}
+.location{font-size:12px;color:#c9d8f1;margin-top:20px}
+.location b{display:block;color:white;font-size:14px;margin-top:5px}
+header h1{font-size:29px;line-height:1.2;margin:23px 0 9px}
+header p{font-size:13px;color:#c9d8f1;line-height:1.6}
+.search{display:flex;background:white;border-radius:13px;padding:0 13px;margin-top:22px;align-items:center}
+.search span{font-size:20px;color:#6d7e9a}
+.search input{width:100%;border:0;outline:0;padding:16px 10px;font-size:14px}
+main{padding:22px 17px}
+.section{display:flex;justify-content:space-between;align-items:center;margin:25px 0 15px}
+.section h2{font-size:18px;margin:0}
+.section a{font-size:12px;color:#3979df;text-decoration:none}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px}
+.category{background:white;border-radius:15px;padding:14px 3px;text-align:center;box-shadow:0 4px 15px #14284a09}
+.category span{font-size:27px}
+.category p{font-size:10px;font-weight:600;margin:8px 0 0}
+.banner{background:linear-gradient(120deg,#2868d9,#65a3ff);color:white;padding:20px;border-radius:18px;margin-top:25px}
+.banner small{opacity:.85}
+.banner h2{font-size:21px;margin:10px 0}
+.banner p{font-size:12px;line-height:1.6}
+.banner button{background:white;color:#2059b4;border:0;border-radius:9px;padding:11px 16px;font-weight:bold}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px #14284a09}
+.visual{height:105px;display:grid;place-items:center;background:#e5edfc;font-size:42px}
+.info{padding:12px}
+.card h3{font-size:13px;margin:0 0 7px}
+.card p{font-size:11px;color:#75839b;margin:0 0 8px}
+.price{font-size:12px;font-weight:bold;color:#2869d3}
+.provider{background:white;padding:14px;border-radius:13px;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.avatar{width:43px;height:43px;background:#e6efff;border-radius:13px;display:grid;place-items:center;font-size:23px}
+.provider h3{font-size:13px;margin:0 0 5px}
+.provider p{font-size:11px;color:#78869c;margin:0}
+.rating{margin-left:auto;font-size:12px;color:#d38a19}
+nav{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:13px 4px 17px;box-shadow:0 -4px 18px #172d4a12}
+nav a{text-decoration:none;color:#75839b;text-align:center;font-size:10px}
+nav a strong{display:block;font-size:20px;margin-bottom:4px}
+nav a.active{color:#286bd6}
+.empty{display:none;text-align:center;color:#74839a;padding:20px;font-size:13px}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">NEXORA.</div>
+<div class="top">
+<div class="logo">NEXORA<span>.</span></div>
+<div>🔔</div>
+</div>
+<div class="location">📍 YOUR LOCATION <b>Nepal ▾</b></div>
 <h1>Anything you need,<br>all in one place.</h1>
-<p>Discover services across Nepal.</p>
-<input class="search" id="search" placeholder="Search services..." oninput="filterServices()">
+<p>Discover services. Connect with people.<br>Make life easier with NEXORA.</p>
+<div class="search">
+<span>⌕</span>
+<input id="search" placeholder="What service are you looking for?" oninput="filterServices()">
+</div>
 </header>
 <main>
-<h2>Explore Categories</h2>
-<div class="grid" id="services">
-<div class="item"><span>🍔</span><h3>Food & Drinks</h3></div>
-<div class="item"><span>🚕</span><h3>Transport</h3></div>
-<div class="item"><span>🏨</span><h3>Hotels</h3></div>
-<div class="item"><span>📸</span><h3>Photography</h3></div>
-<div class="item"><span>🏠</span><h3>Home Services</h3></div>
-<div class="item"><span>🛍️</span><h3>Shopping</h3></div>
-<div class="item"><span>💄</span><h3>Beauty</h3></div>
-<div class="item"><span>💻</span><h3>IT Services</h3></div>
+<div class="section">
+<h2>Explore Categories</h2><a href="#categories">View all →</a>
 </div>
-<div class="feature">
+<div class="categories" id="categories">
+<div class="category"><span>🍔</span><p>Food</p></div>
+<div class="category"><span>🚕</span><p>Transport</p></div>
+<div class="category"><span>🏨</span><p>Hotels</p></div>
+<div class="category"><span>📸</span><p>Photography</p></div>
+<div class="category"><span>🏠</span><p>Home Services</p></div>
+<div class="category"><span>🛍️</span><p>Shopping</p></div>
+<div class="category"><span>💄</span><p>Beauty</p></div>
+<div class="category"><span>💻</span><p>IT Services</p></div>
+</div>
+<div class="banner">
+<small>WELCOME TO NEXORA</small>
 <h2>One App. Endless Possibilities.</h2>
-<p>Find trusted service providers, discover businesses and make your everyday life easier.</p>
-<strong>Coming soon across Nepal.</strong>
+<p>Find services and trusted providers around Nepal, all in one place.</p>
+<button onclick="document.getElementById('search').focus()">Explore Services →</button>
+</div>
+<div class="section">
+<h2>Popular Services</h2><a href="#services">Explore →</a>
+</div>
+<div class="cards" id="services">
+<div class="card">
+<div class="visual">📸</div>
+<div class="info"><h3>Wedding Photography</h3><p>Photo & Events</p><div class="price">Explore providers →</div></div>
+</div>
+<div class="card">
+<div class="visual">🚗</div>
+<div class="info"><h3>Car Rental</h3><p>Transport</p><div class="price">Explore providers →</div></div>
+</div>
+<div class="card">
+<div class="visual">🏡</div>
+<div class="info"><h3>Home Cleaning</h3><p>Home Services</p><div class="price">Explore providers →</div></div>
+</div>
+<div class="card">
+<div class="visual">🏨</div>
+<div class="info"><h3>Hotel Booking</h3><p>Hotels & Travel</p><div class="price">Explore providers →</div></div>
+</div>
+</div>
+<div class="empty" id="empty">No matching services found.</div>
+<div class="section">
+<h2>Featured Providers</h2><a href="#providers">View all →</a>
+</div>
+<div id="providers">
+<div class="provider">
+<div class="avatar">📷</div>
+<div><h3>Professional Photography</h3><p>Photography · Nepal</p></div>
+<div class="rating">★ 4.9</div>
+</div>
+<div class="provider">
+<div class="avatar">🚘</div>
+<div><h3>Reliable Transport</h3><p>Transport · Nepal</p></div>
+<div class="rating">★ 4.8</div>
+</div>
 </div>
 </main>
 <nav>
-<a href="#">⌂ Home</a>
-<a href="#">⌕ Explore</a>
-<a href="#">♡ Saved</a>
-<a href="#">☻ Profile</a>
+<a class="active" href="#"><strong>⌂</strong>Home</a>
+<a href="#categories"><strong>⌕</strong>Explore</a>
+<a href="#services"><strong>♡</strong>Saved</a>
+<a href="#providers"><strong>♙</strong>Profile</a>
 </nav>
 <script>
 function filterServices(){
-const q=document.getElementById('search').value.toLowerCase();
-document.querySelectorAll('.item').forEach(item=>{
-item.style.display=item.innerText.toLowerCase().includes(q)?"block":"none";
+const q=document.getElementById("search").value.toLowerCase();
+let count=0;
+document.querySelectorAll(".card").forEach(card=>{
+const show=card.innerText.toLowerCase().includes(q);
+card.style.display=show?"block":"none";
+if(show)count++;
 });
+document.getElementById("empty").style.display=count?"none":"block";
 }
 </script>
 </body>
 </html>
+
